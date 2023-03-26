@@ -6,15 +6,15 @@
   
   <title>前端开发基础知识 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="一、ES61.let1.1 let声明的变量有严格作用域12345678910111213&lt;script&gt;    &#x2F;&#x2F; var 声明的变量往往会越域    &#x2F;&#x2F; let 声明的变量有严格局部作用域    &amp;#123;        var a &#x3D; 1;        let b &#x3D; 2;    &amp;#125;    console.log(a);    console.log(b);">
+  <meta name="description" content="[TOC] 一、ES61.let1.1 let声明的变量有严格作用域12345678910111213&lt;script&gt;    &#x2F;&#x2F; var 声明的变量往往会越域    &#x2F;&#x2F; let 声明的变量有严格局部作用域    &amp;#123;        var a &#x3D; 1;        let b &#x3D; 2;    &amp;#125;    console.log(a);    console.log">
 <meta property="og:type" content="website">
 <meta property="og:title" content="前端开发基础知识">
 <meta property="og:url" content="https://chaobk.github.io/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、ES61.let1.1 let声明的变量有严格作用域12345678910111213&lt;script&gt;    &#x2F;&#x2F; var 声明的变量往往会越域    &#x2F;&#x2F; let 声明的变量有严格局部作用域    &amp;#123;        var a &#x3D; 1;        let b &#x3D; 2;    &amp;#125;    console.log(a);    console.log(b);">
+<meta property="og:description" content="[TOC] 一、ES61.let1.1 let声明的变量有严格作用域12345678910111213&lt;script&gt;    &#x2F;&#x2F; var 声明的变量往往会越域    &#x2F;&#x2F; let 声明的变量有严格局部作用域    &amp;#123;        var a &#x3D; 1;        let b &#x3D; 2;    &amp;#125;    console.log(a);    console.log">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-22T14:16:51.000Z">
-<meta property="article:modified_time" content="2023-03-23T14:53:38.403Z">
+<meta property="article:modified_time" content="2023-03-24T13:55:51.043Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -95,7 +95,8 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="一、ES6"><a href="#一、ES6" class="headerlink" title="一、ES6"></a>一、ES6</h2><h3 id="1-let"><a href="#1-let" class="headerlink" title="1.let"></a>1.let</h3><h4 id="1-1-let声明的变量有严格作用域"><a href="#1-1-let声明的变量有严格作用域" class="headerlink" title="1.1 let声明的变量有严格作用域"></a>1.1 let声明的变量有严格作用域</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// var 声明的变量往往会越域</span></span><br><span class="line">    <span class="comment">// let 声明的变量有严格局部作用域</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1</span></span><br><span class="line">    <span class="comment">// Uncaught ReferenceError: b is not defined</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+        <p>[TOC]</p>
+<h2 id="一、ES6"><a href="#一、ES6" class="headerlink" title="一、ES6"></a>一、ES6</h2><h3 id="1-let"><a href="#1-let" class="headerlink" title="1.let"></a>1.let</h3><h4 id="1-1-let声明的变量有严格作用域"><a href="#1-1-let声明的变量有严格作用域" class="headerlink" title="1.1 let声明的变量有严格作用域"></a>1.1 let声明的变量有严格作用域</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// var 声明的变量往往会越域</span></span><br><span class="line">    <span class="comment">// let 声明的变量有严格局部作用域</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1</span></span><br><span class="line">    <span class="comment">// Uncaught ReferenceError: b is not defined</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 <h4 id="1-2-var可以声明多次，let只能生声明一次"><a href="#1-2-var可以声明多次，let只能生声明一次" class="headerlink" title="1.2 var可以声明多次，let只能生声明一次"></a>1.2 var可以声明多次，let只能生声明一次</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> m = <span class="number">1</span></span><br><span class="line">    <span class="keyword">var</span> m = <span class="number">2</span></span><br><span class="line">    <span class="keyword">let</span> n = <span class="number">3</span></span><br><span class="line">    <span class="keyword">let</span> n = <span class="number">4</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(m)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(n)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
@@ -136,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://chaobk.github.io/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html" data-id="clfl8hkfy000368u4fia67b76" data-title="前端开发基础知识" class="article-share-link">Share</a>
+      <a data-url="https://chaobk.github.io/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html" data-id="clfov4ibu00029wu4bgj71m3z" data-title="前端开发基础知识" class="article-share-link">Share</a>
       
       
       
