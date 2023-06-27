@@ -6,12 +6,12 @@
   
   <title>gulimall-notes.md | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="[TOC] 1.openfeign远程服务调用 引入open-feign依赖 编写一个接口，告诉SpringCloud这个接口需要调用远程服务，例如如下的&#x2F;member&#x2F;list接口1234567891011121314@RestController@RequestMapping(&quot;coupon&#x2F;coupon&quot;)public class CouponController &amp;#1">
+  <meta name="description" content="1.openfeign远程服务调用 引入open-feign依赖 编写一个接口，告诉SpringCloud这个接口需要调用远程服务，例如如下的&#x2F;member&#x2F;list接口1234567891011121314@RestController@RequestMapping(&quot;coupon&#x2F;coupon&quot;)public class CouponController &amp;#123;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="gulimall-notes.md">
 <meta property="og:url" content="https://chaobk.github.io/gulimall-notes/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="[TOC] 1.openfeign远程服务调用 引入open-feign依赖 编写一个接口，告诉SpringCloud这个接口需要调用远程服务，例如如下的&#x2F;member&#x2F;list接口1234567891011121314@RestController@RequestMapping(&quot;coupon&#x2F;coupon&quot;)public class CouponController &amp;#1">
+<meta property="og:description" content="1.openfeign远程服务调用 引入open-feign依赖 编写一个接口，告诉SpringCloud这个接口需要调用远程服务，例如如下的&#x2F;member&#x2F;list接口1234567891011121314@RestController@RequestMapping(&quot;coupon&#x2F;coupon&quot;)public class CouponController &amp;#123;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://chaobk.github.io/images/2023-03-21-22-00-59.png">
 <meta property="og:image" content="https://chaobk.github.io/gulimall-notes/index/2023-04-02-21-24-45.png">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://chaobk.github.io/index/!%5Bimage-20200502175901959%5D(images/image-20200502175901959.png).png">
 <meta property="og:image" content="https://chaobk.github.io/index/!%5Bimage-20200502181432745%5D(images/image-20200502181432745.png).png">
 <meta property="article:published_time" content="2023-03-19T12:56:41.000Z">
-<meta property="article:modified_time" content="2023-06-04T08:01:15.018Z">
+<meta property="article:modified_time" content="2023-06-27T15:23:34.845Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://chaobk.github.io/images/2023-03-21-22-00-59.png">
@@ -115,8 +115,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h2 id="1-openfeign远程服务调用"><a href="#1-openfeign远程服务调用" class="headerlink" title="1.openfeign远程服务调用"></a>1.openfeign远程服务调用</h2><ul>
+        <h2 id="1-openfeign远程服务调用"><a href="#1-openfeign远程服务调用" class="headerlink" title="1.openfeign远程服务调用"></a>1.openfeign远程服务调用</h2><ul>
 <li>引入<code>open-feign</code>依赖</li>
 <li>编写一个接口，告诉<code>SpringCloud</code>这个接口需要调用远程服务，例如如下的<code>/member/list</code>接口<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;coupon/coupon&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CouponController</span> &#123;</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/member/list&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> R <span class="title function_">membercoupons</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">CouponEntity</span> <span class="variable">couponEntity</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CouponEntity</span>();</span><br><span class="line">        couponEntity.setCouponName(<span class="string">&quot;满100减10&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> R.ok().put(<span class="string">&quot;coupons&quot;</span>, Arrays.asList(couponEntity));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>声明接口的每一个方法都是调用哪个远程服务的哪个请求<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient(&quot;gulimall-coupon&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">CouponFeignService</span> &#123;</span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/coupon/coupon/member/list&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> R <span class="title function_">membercoupons</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
@@ -605,6 +604,7 @@
 
 <p>查看newbank中的数据</p>
 <p><img src="/index/!%5Bimage-20200502181432745%5D(images/image-20200502181432745.png).png"></p>
+<h2 id="23-压力测试"><a href="#23-压力测试" class="headerlink" title="23.压力测试"></a>23.压力测试</h2><p>测试工具 - jmeter</p>
 
       
     </div>
